@@ -1,0 +1,53 @@
+UTILITY BOARD - COMMUNITY EDITION v2.0.1
+========================================
+A client-side wrist/floating utility board for Gorilla Tag (PC VR, BepInEx 5). Everyone gets their own board;
+nothing is shared between players and nothing is sent to anyone.
+
+RULES / SAFETY
+ - Client-side only. The board only works offline, in private rooms and in modded rooms. In public lobbies it hides
+   itself and undoes its time/weather changes. Weather, time and colours are only visible to you.
+ - It does not change gameplay, movement or other players. Follow Gorilla Tag's modding rules: use mods in
+   private/modded lobbies.
+
+INSTALL (Gorilla Tag closed)
+ 1. Install BepInEx 5 for Gorilla Tag if you don't have it.
+ 2. Copy the folder  BepInEx-plugin\UtilityBoardCommunity  into  <Gorilla Tag>\BepInEx\plugins\
+ 3. Optional companion (music, soundboard, mic mute, OBS, TikTok LIVE, CPU/RAM): needs the .NET 8 Desktop Runtime.
+    Run "Start Utility Board Companion.bat" and keep the window open while you play.
+    The first time, it asks which integrations YOU want (you can skip everything).
+
+YOUR ACCOUNTS STAY YOURS
+ - TikTok LIVE uses TikFinity running on YOUR PC, logged into YOUR TikTok. The companion only listens to
+   TikFinity's local WebSocket (localhost) - no TikTok login, token or key is ever asked for or stored.
+ - OBS: by default it reads YOUR OBS websocket settings from your own PC; or enter port/password in setup.
+ - Anything you enter is encrypted with Windows DPAPI for your Windows account only:
+   %APPDATA%\UtilityBoardCommunity\integrations.dat  (useless on any other PC/account).
+ - The companion pipe only accepts your own Windows user on this PC; network access is denied.
+ - Run "Setup Integrations.bat" any time to change or turn off integrations.
+
+CONTROLS
+ - F4 (keyboard, Gorilla Tag window focused) opens/closes the board. Change it in
+   BepInEx\config\community.utilityboard.gt.cfg  ->  [Input] ToggleKey = F4   (any Unity key name, None = off).
+ - X button (left controller) opens/closes. Settings > "Open:" can switch to stick click / menu / hold stick.
+ - Palm: turn your left palm toward your face and look at it for half a second. Settings > Palm ON/OFF,
+   "Calibrate palm" if it doesn't trigger well.
+ - Poke buttons with your right index finger. Grab the TOP BAR with your right grip to move the board;
+   it remembers where you put it. Settings > "Reset board spot".
+ - Left-handed? Settings > Right-handed/Left-handed swaps the hands.
+
+FEATURES
+ Time of day, weather (rain/snow/thunderstorm, intensity), local music player + Spotify controls, soundboard
+ (your own clips in Documents\UtilityBoardCommunity\SFX + 12 starter sounds), room code (hidden until tapped),
+ session timer + local clock, Windows mic mute with mic picker, OBS record/scenes/clip, TikTok LIVE stats & chat,
+ performance monitor (FPS, frame time, ping, CPU/RAM), next-launch mod toggles for your own plugin folders,
+ 6 colour themes + custom colours, size/angle, click sound, haptics.
+
+FILES
+ Settings: Documents\UtilityBoardCommunity\settings.json, companion.json (no secrets)
+ Integrations (encrypted): %APPDATA%\UtilityBoardCommunity\integrations.dat
+ Uninstall: delete BepInEx\plugins\UtilityBoardCommunity and the two folders above.
+
+NEW IN 2.0.1
+ - F4 keyboard toggle (configurable, see above).
+ - Running next to another Utility Board mod: if one is loaded too, this board leaves the X button and
+   palm gesture to it and opens with F4 only, so one press never opens two boards. Without it, X + palm + F4 all work.

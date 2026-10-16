@@ -1,0 +1,5 @@
+# Copy to leakterms.txt (git-ignored) and list your own private strings, one per line.
+# Examples:
+your-windows-username
+your-pc-name
+your-private-project-name

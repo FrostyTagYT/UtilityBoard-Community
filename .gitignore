@@ -1,0 +1,13 @@
+bin/
+obj/
+out/
+dist/
+*.dll
+*.exe
+*.pdb
+.vs/
+*.user
+results/
+*.log
+libs/
+tools/leakterms.txt

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Build: dotnet build -c Release -p:GameDir="<Gorilla Tag folder>". Game/BepInEx assemblies are compile-only references. -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework><LangVersion>latest</LangVersion>
+    <AssemblyName>UtilityBoardCommunity</AssemblyName><RootNamespace>UtilityBoard</RootNamespace><Product>Utility Board Community Edition</Product><Company>Utility Board Community Edition</Company><Authors>Utility Board Community Edition</Authors>
+    <Nullable>disable</Nullable><Version>2.0.0</Version><DebugType>none</DebugType><Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildProjectDirectory)=/src</PathMap><EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <DefineConstants>COMMUNITY</DefineConstants>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies><GenerateDependencyFile>false</GenerateDependencyFile>
+    <Managed>$(GameDir)/Gorilla Tag_Data/Managed</Managed><NoWarn>CS0618;CS0414;CS0169;CS0162</NoWarn>
+  </PropertyGroup>
+  <ItemGroup><Compile Include="../src/*.cs" /></ItemGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(GameDir)/BepInEx/core/BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.CoreModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.InputLegacyModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.PhysicsModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.XRModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.VRModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.TextRenderingModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.ImageConversionModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.ParticleSystemModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.AudioModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/UnityEngine.JSONSerializeModule.dll"><Private>false</Private></Reference>
+    <Reference Include="$(Managed)/Unity.InputSystem.dll"><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>
